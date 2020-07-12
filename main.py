@@ -14,10 +14,10 @@ def main():
     if errors.get() > 11:
         errors.set(0)
     canva = Canvas(root, width=500, height=500, bg="#edf5e1")
-    file = open(r"C:\Users\Utente\Desktop\games\HM_Gui\words.txt", "r")
+    file = open("words.txt", "r")
     words = file.readlines()
     file.close()
-    firs_img = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\1.png")
+    firs_img = PhotoImage(file="1.png")
     first_img_label = Label(root, image=firs_img, bg="#edf5e1")
     first_img_label.image = firs_img
     canva.create_window(250, 100, window=first_img_label)
@@ -42,15 +42,15 @@ def main():
         canva.destroy()
         end_canva = Canvas(root, width=500, height=500, bg="#edf5e1")
         play_again = PhotoImage(
-            file=r"C:\Users\Utente\Desktop\games\HM_Gui\play_again.png"
+            file="play_again.png"
         )
         if text == f"YOU LOST!\nTHE RIGHT WORD WAS {right_word.upper()}":
-            hanged = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\11.png")
+            hanged = PhotoImage(file="11.png")
             hanged_label = Label(root, image=hanged)
             hanged_label.image = hanged
             end_canva.create_window(250, 100, window=hanged_label)
         quit_game = PhotoImage(
-            file=r"C:\Users\Utente\Desktop\games\HM_Gui\quit_game.png"
+            file="quit_game.png"
         )
         button = Button(
             root,
@@ -95,9 +95,8 @@ def main():
 
             errors_value = StringVar()
             errors_value.set(errors.get() + 1)
-            path = os.path.join(
-                r"C:\Users\Utente\Desktop\games\HM_Gui", errors_value.get() + ".png"
-            )
+            path = errors_value + ".png"
+            
             errors.set(errors.get() + 1)
             img = PhotoImage(file=path)
             img_label = Label(root, image=img, bg="#edf5e1")
@@ -110,32 +109,32 @@ def main():
         if let_num.get() == len(right_list):
             game_ended("YOU WON!")
 
-    a = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\a.png")
-    b = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\b.png")
-    c = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\c.png")
-    d = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\d.png")
-    e = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\e.png")
-    f = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\f.png")
-    g = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\g.png")
-    h = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\h.png")
-    i = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\i.png")
-    j = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\j.png")
-    k = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\k.png")
-    l = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\l.png")
-    m = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\m.png")
-    n = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\n.png")
-    o = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\o.png")
-    p = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\p.png")
-    q = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\q.png")
-    r = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\r.png")
-    s = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\s.png")
-    t = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\t.png")
-    u = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\u.png")
-    v = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\v.png")
-    w = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\w.png")
-    x = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\x.png")
-    y = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\y.png")
-    z = PhotoImage(file=r"C:\Users\Utente\Desktop\games\HM_Gui\z.png")
+    a = PhotoImage(file="a.png")
+    b = PhotoImage(file="b.png")
+    c = PhotoImage(file="c.png")
+    d = PhotoImage(file="d.png")
+    e = PhotoImage(file="e.png")
+    f = PhotoImage(file="f.png")
+    g = PhotoImage(file="g.png")
+    h = PhotoImage(file="h.png")
+    i = PhotoImage(file="i.png")
+    j = PhotoImage(file="j.png")
+    k = PhotoImage(file="k.png")
+    l = PhotoImage(file="l.png")
+    m = PhotoImage(file="m.png")
+    n = PhotoImage(file="n.png")
+    o = PhotoImage(file="o.png")
+    p = PhotoImage(file="p.png")
+    q = PhotoImage(file="q.png")
+    r = PhotoImage(file="r.png")
+    s = PhotoImage(file="s.png")
+    t = PhotoImage(file="t.png")
+    u = PhotoImage(file="u.png")
+    v = PhotoImage(file="v.png")
+    w = PhotoImage(file="w.png")
+    x = PhotoImage(file="x.png")
+    y = PhotoImage(file="y.png")
+    z = PhotoImage(file="z.png")
 
     a_button = Button(
         root, command=lambda: check("a", a_button), image=a, border=0, bg="#edf5e1"
@@ -430,7 +429,7 @@ def main():
 
 root = Tk()
 
-root.iconbitmap(r"C:\Users\Utente\Desktop\games\HM_Gui\icon.ico")
+root.iconbitmap("icon.ico")
 root.title("Hanged Man")
 root.resizable(False, False)
 main()
